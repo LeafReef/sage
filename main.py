@@ -2,7 +2,7 @@ import Adafruit_DHT
 from time import sleep
 import requests
 
-URL = "https://api-aura.herokuapp.com/api/set-sensor-value"
+URL = "https://leafreef.herokuapp.com/api/insert"
 
 DHT_SENSOR = Adafruit_DHT.DHT11
 DHT_PIN = 4
@@ -19,11 +19,9 @@ while True:
             "humidity": humidity
         }
 
-        print(sensor_data)
-
-        # Send POST request
-        # response = requests.post(URL, data=sensor_data)
-        # print(response.text)
+        # Send POST request to API
+        response = requests.post(URL, data=sensor_data)
+        print(response.text)
 
         # Pause for 1 second
         sleep(1)
