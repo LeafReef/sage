@@ -7,7 +7,8 @@ URL = "http://localhost:3000/api/insert"
 while True:
     sensor_data = {
         "temperature": random.randint(20, 25),
-        "humidity": random.randint(30, 50)
+        "humidity": random.randint(40, 50),
+        "moisture": random.randint(70, 80)
     }
 
     # Send POST request
