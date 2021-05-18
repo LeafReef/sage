@@ -2,18 +2,16 @@ import time
 import requests
 import random
 
-URL = "http://localhost:3000/api/insert"
+URL = "https://leafreef.herokuapp.com/api/insert"
+SECONDS = 5
 
 while True:
     sensor_data = {
         "temperature": random.randint(20, 25),
-        "humidity": random.randint(40, 50),
-        "moisture": random.randint(70, 80)
+        "humidity": random.randint(40, 50)
     }
 
-    # Send POST request
     response = requests.post(URL, data=sensor_data)
     print(response.text)
 
-    # Delay for 1 sec
-    time.sleep(1)
+    time.sleep(SECONDS)
