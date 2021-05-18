@@ -1,8 +1,9 @@
 import Adafruit_DHT
-from time import sleep
+import time 
 import requests
 
 URL = "https://leafreef.herokuapp.com/api/insert"
+SECONDS = 5
 
 DHT_SENSOR = Adafruit_DHT.DHT11
 DHT_PIN = 4
@@ -23,8 +24,7 @@ while True:
         response = requests.post(URL, data=sensor_data)
         print(response.text)
 
-        # Pause for 1 second
-        sleep(1)
+        time.sleep(SECONDS)
     # Failed to read sensor value, tries again
     else:
         print("Sensor failed")
