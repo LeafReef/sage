@@ -1,3 +1,3 @@
 # Sage
 
-Raspberry Pi script
+Raspberry Pi client
